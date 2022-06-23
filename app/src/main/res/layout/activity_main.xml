@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Tasks"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
@@ -18,34 +18,90 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="298dp"
-        android:layout_height="275dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="148dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <Button
         android:id="@+id/addTaskButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="ADD TASK"
         app:layout_constraintBaseline_toBaselineOf="@+id/allTasksButton"
-        app:layout_constraintEnd_toStartOf="@+id/allTasksButton"
-        app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/allTasksButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="All Tasks"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settingB"
+        app:layout_constraintStart_toEndOf="@+id/addTaskButton"
+        tools:layout_editor_absoluteY="623dp" />
+
+    <Button
+        android:id="@+id/settingB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Settings"
+        app:layout_constraintBaseline_toBaselineOf="@+id/allTasksButton"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/task1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task One"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/task2"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <TextView
+        android:id="@+id/task2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Two"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/text3"
+        tools:layout_editor_absoluteY="258dp" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:text="Task Three"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="353dp" />
+
+    <Button
+        android:id="@+id/taskOneB"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:text="Go"
+        app:layout_constraintBaseline_toBaselineOf="@+id/task1"
+        app:layout_constraintEnd_toEndOf="@+id/taskTwoB"
+        app:layout_constraintStart_toStartOf="@+id/taskTwoB" />
+
+    <Button
+        android:id="@+id/taskTwoB"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:text="Go"
+        app:layout_constraintBaseline_toBaselineOf="@+id/task2"
+        app:layout_constraintEnd_toEndOf="@+id/taskThreeB"
+        app:layout_constraintStart_toStartOf="@+id/taskThreeB" />
+
+    <Button
+        android:id="@+id/taskThreeB"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginEnd="37dp"
+        android:text="Go"
+        app:layout_constraintBaseline_toBaselineOf="@+id/text3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
