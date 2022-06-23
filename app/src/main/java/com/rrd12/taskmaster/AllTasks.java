@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class allTasks extends AppCompatActivity {
+public class AllTasks extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_tasks);
 
-        Button allTaskHome = allTasks.this.findViewById(R.id.allTaskHomeButton);
+        Button allTaskHome = AllTasks.this.findViewById(R.id.allTaskHomeButton);
         allTaskHome.setOnClickListener(v -> {
-            Intent goHome = new Intent(allTasks.this, MainActivity.class);
+            Intent goHome = new Intent(AllTasks.this, MainActivity.class);
             startActivity(goHome);
         });
     }
