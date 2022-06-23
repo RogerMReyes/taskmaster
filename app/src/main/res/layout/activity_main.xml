@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/usernameTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Tasks"
@@ -32,11 +33,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="507dp"
         android:layout_marginEnd="16dp"
         android:text="All Tasks"
         app:layout_constraintEnd_toStartOf="@+id/settingB"
         app:layout_constraintStart_toEndOf="@+id/addTaskButton"
-        tools:layout_editor_absoluteY="623dp" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameTaskTitle" />
 
     <Button
         android:id="@+id/settingB"
@@ -51,57 +53,63 @@
         android:id="@+id/task1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
         android:text="Task One"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/task2"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameTaskTitle" />
 
     <TextView
         android:id="@+id/task2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
         android:text="Task Two"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/text3"
-        tools:layout_editor_absoluteY="258dp" />
+        app:layout_constraintStart_toStartOf="@+id/task3"
+        app:layout_constraintTop_toBottomOf="@+id/task1" />
 
     <TextView
-        android:id="@+id/text3"
+        android:id="@+id/task3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
+        android:layout_marginTop="67dp"
         android:text="Task Three"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="353dp" />
+        app:layout_constraintTop_toBottomOf="@+id/task2" />
 
     <Button
         android:id="@+id/taskOneB"
         android:layout_width="55dp"
         android:layout_height="40dp"
+        android:layout_marginTop="180dp"
         android:text="Go"
-        app:layout_constraintBaseline_toBaselineOf="@+id/task1"
         app:layout_constraintEnd_toEndOf="@+id/taskTwoB"
-        app:layout_constraintStart_toStartOf="@+id/taskTwoB" />
+        app:layout_constraintStart_toStartOf="@+id/taskTwoB"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/taskTwoB"
         android:layout_width="55dp"
         android:layout_height="40dp"
+        android:layout_marginTop="34dp"
         android:text="Go"
-        app:layout_constraintBaseline_toBaselineOf="@+id/task2"
         app:layout_constraintEnd_toEndOf="@+id/taskThreeB"
-        app:layout_constraintStart_toStartOf="@+id/taskThreeB" />
+        app:layout_constraintStart_toStartOf="@+id/taskThreeB"
+        app:layout_constraintTop_toBottomOf="@+id/taskOneB" />
 
     <Button
         android:id="@+id/taskThreeB"
         android:layout_width="55dp"
         android:layout_height="40dp"
         android:layout_marginStart="204dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="37dp"
         android:text="Go"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text3" />
+        app:layout_constraintStart_toEndOf="@+id/task3"
+        app:layout_constraintTop_toBottomOf="@+id/taskTwoB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,11 +13,11 @@
         android:layout_marginTop="64dp"
         android:text="Task Detail"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/taskDetails"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/taskDetails"
         android:layout_width="333dp"
         android:layout_height="340dp"
         android:layout_marginTop="34dp"

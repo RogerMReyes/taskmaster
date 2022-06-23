@@ -7,4 +7,5 @@
     <string name="total_tasks_0">Total Tasks: 0</string>
     <string name="task_title">Task Title</string>
     <string name="text_description">Text Description</string>
+    <string name="no_title">No Title</string>
 </resources>
