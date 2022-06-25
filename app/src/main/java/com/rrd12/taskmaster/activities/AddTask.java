@@ -1,10 +1,12 @@
-package com.rrd12.taskmaster;
+package com.rrd12.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.rrd12.taskmaster.R;
 
 public class AddTask extends AppCompatActivity {
 

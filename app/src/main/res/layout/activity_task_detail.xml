@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaskDetail">
+    android:background="#171717"
+    tools:context=".activities.TaskDetail">
 
     <TextView
         android:id="@+id/taskDetailTitle"
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="Task Detail"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@+id/taskDetails"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,10 +22,25 @@
         android:id="@+id/taskDetails"
         android:layout_width="333dp"
         android:layout_height="340dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/list_background"
+        android:padding="15dp"
         android:text="Lorem Ipsum"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskDetailTitle" />
+
+    <TextView
+        android:id="@+id/taskState"
+        android:layout_width="111dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:text="TextView"
+        android:textColor="#FAF9F9"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDetails" />
 </androidx.constraintlayout.widget.ConstraintLayout>
