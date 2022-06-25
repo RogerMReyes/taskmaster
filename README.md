@@ -19,3 +19,11 @@ Today's Lab we dipped into shared preferences and extras. The homepage was updat
 ![Lab27 Home](screenshots/Lab27/Lab27_Home.PNG)
 ![Lab27 Settings](screenshots/Lab27/Lab27_Settings.PNG)
 ![Lab27 TaskDetail](screenshots/Lab27/Lab27_TaskDetail.PNG)
+
+## Lab28
+
+### Summary
+
+Today's lab was all about setting up a RecyclerView. The buttons on the homepage were instead replaced with a RecyclerViewer that iterates over a list of Tasks and displays them on screen. Each task has an event listener that will pass on extras of the tasks properties which will populate the Task Detail page.
+
+![Lab28 Home](screenshots/Lab28/Lab28_Home.PNG)

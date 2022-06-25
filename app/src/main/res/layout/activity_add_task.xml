@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTask"
+    tools:context=".activities.AddTask"
+    android:background="#171717"
     tools:visibility="visible">
 
     <EditText
@@ -12,13 +13,14 @@
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:layout_marginTop="384dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/do_something"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -27,6 +29,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="68dp"
         android:text="@string/add_task"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,13 +39,14 @@
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:layout_marginTop="232dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/my_task"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addTask"
@@ -61,6 +65,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
         android:text="@string/total_tasks_0"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTask" />
@@ -70,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -83,6 +89,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@id/taskName"
         android:text="@string/task_title"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/taskName"
         app:layout_constraintStart_toStartOf="@+id/taskName" />
 
@@ -92,6 +99,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@id/doSomethingText"
         android:text="@string/text_description"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/doSomethingText"
         app:layout_constraintStart_toStartOf="@+id/doSomethingText" />
 

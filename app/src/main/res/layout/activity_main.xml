@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#171717"
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:id="@+id/usernameTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Tasks"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
         android:id="@+id/addTaskButton"
@@ -49,67 +51,17 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/allTasksButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/task1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Task One"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/task2"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTaskTitle" />
-
-    <TextView
-        android:id="@+id/task2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:text="Task Two"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/task3"
-        app:layout_constraintTop_toBottomOf="@+id/task1" />
-
-    <TextView
-        android:id="@+id/task3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="67dp"
-        android:text="Task Three"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task2" />
-
-    <Button
-        android:id="@+id/taskOneB"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="180dp"
-        android:text="Go"
-        app:layout_constraintEnd_toEndOf="@+id/taskTwoB"
-        app:layout_constraintStart_toStartOf="@+id/taskTwoB"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/taskTwoB"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="34dp"
-        android:text="Go"
-        app:layout_constraintEnd_toEndOf="@+id/taskThreeB"
-        app:layout_constraintStart_toStartOf="@+id/taskThreeB"
-        app:layout_constraintTop_toBottomOf="@+id/taskOneB" />
-
-    <Button
-        android:id="@+id/taskThreeB"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="37dp"
-        android:text="Go"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskList"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/list_background"
+        android:padding="10dp"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/task3"
-        app:layout_constraintTop_toBottomOf="@+id/taskTwoB" />
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTaskTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
