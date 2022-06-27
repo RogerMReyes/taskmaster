@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
         List<Task> tasks = new ArrayList<>();
 
-        tasks.add(new Task("Task One"));
-        tasks.add(new Task("Task Two"));
-        tasks.add(new Task("Task Three"));
-        tasks.add(new Task("Task Four"));
-        tasks.add(new Task("Task Five"));
-        tasks.add(new Task("Task Six"));
-        tasks.add(new Task("Task Seven"));
+        tasks.add(new Task("Task One","Task One","new"));
+        tasks.add(new Task("Task Two","Task Two","new"));
+        tasks.add(new Task("Task Three","Task Three","new"));
+        tasks.add(new Task("Task Four","Task Four","new"));
+        tasks.add(new Task("Task Five","Task Five","new"));
+        tasks.add(new Task("Task Six","Task Six","new"));
+        tasks.add(new Task("Task Seven","Task Seven","new"));
 
         TaskListRecViewAdapter adapter = new TaskListRecViewAdapter(tasks, this);
         taskList.setAdapter(adapter);
