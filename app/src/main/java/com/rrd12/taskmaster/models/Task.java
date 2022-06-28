@@ -1,22 +1,34 @@
 package com.rrd12.taskmaster.models;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+import java.util.Date;
+
+@Entity
 public class Task {
 
+    @PrimaryKey(autoGenerate = true)
+    public Long id;
     String title;
     String body;
-    String state;
+    Date dateCreated;
+    StateEnum state;
 
+    @Ignore
     public Task() {
     }
-
+    @Ignore
     public Task(String title) {
         this.title = title;
     }
 
-    public Task(String _title, String _body, String _state) {
-        this.title = _title;
-        this.body = _body;
-        this.state = _state;
+    public Task(String title, String body, Date dateCreated, StateEnum state) {
+        this.title = title;
+        this.body = body;
+        this.dateCreated = dateCreated;
+        this.state = state;
     }
 
     public String getTitle() {
@@ -35,11 +47,27 @@ public class Task {
         this.body = body;
     }
 
-    public String getState() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }

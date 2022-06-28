@@ -15,6 +15,9 @@ import com.rrd12.taskmaster.activities.MainActivity;
 import com.rrd12.taskmaster.activities.TaskDetail;
 import com.rrd12.taskmaster.models.Task;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class TaskListRecViewAdapter extends RecyclerView.Adapter<TaskListRecViewAdapter.TaskListViewHolder> {
@@ -39,8 +42,12 @@ public class TaskListRecViewAdapter extends RecyclerView.Adapter<TaskListRecView
         TextView taskFragView = holder.itemView.findViewById(R.id.taskFragView);
         String taskTitle = tasks.get(position).getTitle();
         String taskBody = tasks.get(position).getBody();
-        String taskState = tasks.get(position).getState();
-        taskFragView.setText("-" + taskTitle);
+        Date taskDate = tasks.get(position).getDateCreated();
+        String date = DateFormat.getDateInstance().format(taskDate);
+        String taskState = tasks.get(position).getState().toString();
+        taskFragView.setText("-" + taskTitle + "\n"
+                                + date + "\n"
+                                + taskState);
 
         View taskView = holder.itemView;
         taskView.setOnClickListener(v -> {

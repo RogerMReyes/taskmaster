@@ -3,6 +3,7 @@ package com.rrd12.taskmaster.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.rrd12.taskmaster.R;
 import com.rrd12.taskmaster.adapter.TaskListRecViewAdapter;
+import com.rrd12.taskmaster.database.TaskMasterDatabase;
 import com.rrd12.taskmaster.models.Task;
 
 import java.util.ArrayList;
@@ -21,9 +23,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    TaskMasterDatabase taskMasterDatabase;
     public static final String TASK_TITLE = "Task Title";
     public static final String TASK_BODY = "Task Body";
     public static final String TASK_STATE = "Task State";
+    public static final String DATABASE_NAME = "task_list";
+    TaskListRecViewAdapter adapter;
+    List<Task> tasks = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        taskMasterDatabase = Room.databaseBuilder(
+                        getApplicationContext(),
+                        TaskMasterDatabase.class,
+                        DATABASE_NAME)
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
+        tasks = taskMasterDatabase.taskDao().findAll();
 
         simpleButtonActivity(R.id.addTaskButton, AddTask.class);
         simpleButtonActivity(R.id.allTasksButton, AllTasks.class);
@@ -42,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateUsername();
+
+        tasks.clear();
+        tasks.addAll(taskMasterDatabase.taskDao().findAll());
+        adapter.notifyDataSetChanged();
     }
 
     private <T> void simpleButtonActivity(int id, Class<T> c){
@@ -65,17 +84,17 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         taskList.setLayoutManager(layoutManager);
 
-        List<Task> tasks = new ArrayList<>();
+//        List<Task> tasks = new ArrayList<>();
 
-        tasks.add(new Task("Task One","Task One","new"));
-        tasks.add(new Task("Task Two","Task Two","new"));
-        tasks.add(new Task("Task Three","Task Three","new"));
-        tasks.add(new Task("Task Four","Task Four","new"));
-        tasks.add(new Task("Task Five","Task Five","new"));
-        tasks.add(new Task("Task Six","Task Six","new"));
-        tasks.add(new Task("Task Seven","Task Seven","new"));
+//        tasks.add(new Task("Task One","Task One","new"));
+//        tasks.add(new Task("Task Two","Task Two","new"));
+//        tasks.add(new Task("Task Three","Task Three","new"));
+//        tasks.add(new Task("Task Four","Task Four","new"));
+//        tasks.add(new Task("Task Five","Task Five","new"));
+//        tasks.add(new Task("Task Six","Task Six","new"));
+//        tasks.add(new Task("Task Seven","Task Seven","new"));
 
-        TaskListRecViewAdapter adapter = new TaskListRecViewAdapter(tasks, this);
+        adapter = new TaskListRecViewAdapter(tasks, this);
         taskList.setAdapter(adapter);
     }
 }
