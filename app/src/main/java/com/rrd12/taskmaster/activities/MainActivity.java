@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TASK_BODY = "Task Body";
     public static final String TASK_STATE = "Task State";
     public static final String DATABASE_NAME = "task_list";
+    public static final String TASK_SIZE = "size";
     TaskListRecViewAdapter adapter;
     List<Task> tasks = null;
 
@@ -46,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 .fallbackToDestructiveMigration()
                 .build();
         tasks = taskMasterDatabase.taskDao().findAll();
+        taskListRecView();
 
-        simpleButtonActivity(R.id.addTaskButton, AddTask.class);
+        setUpAddTask();
         simpleButtonActivity(R.id.allTasksButton, AllTasks.class);
         simpleButtonActivity(R.id.settingB, Settings.class);
-        taskListRecView();
     }
 
     @Override
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
     private void buttonGo(Button button, Intent goWhere){
         button.setOnClickListener(v->{
             startActivity(goWhere);
+        });
+    }
+
+    private void setUpAddTask(){
+        findViewById(R.id.addTaskButton).setOnClickListener(v ->{
+            Intent goToAddTask = new Intent(MainActivity.this, AddTask.class);
+            goToAddTask.putExtra(TASK_SIZE,tasks.size());
+            startActivity(goToAddTask);
         });
     }
 

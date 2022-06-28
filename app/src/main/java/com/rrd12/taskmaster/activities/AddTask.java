@@ -3,11 +3,13 @@ package com.rrd12.taskmaster.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rrd12.taskmaster.R;
@@ -36,6 +38,7 @@ public class AddTask extends AppCompatActivity {
                 .build();
 
         setUpSpinner();
+        setUpTotalTask();
         setUpAddButton(taskMasterDatabase);
     }
 
@@ -60,6 +63,14 @@ public class AddTask extends AppCompatActivity {
             Task newTask = new Task(taskTitleInput,taskBodyInput,newDate, state);
             database.taskDao().insertATask(newTask);
             Toast.makeText(AddTask.this, "Task Added", Toast.LENGTH_SHORT).show();
+            finish();
         });
+    }
+
+    private void setUpTotalTask(){
+        Intent callingIntent = getIntent();
+        int size = callingIntent.getIntExtra(MainActivity.TASK_SIZE, 0);
+        TextView totalTaskView = findViewById(R.id.totalTaskView);
+        totalTaskView.setText("Total Tasks: " + size);
     }
 }
