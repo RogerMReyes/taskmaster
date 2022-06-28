@@ -27,3 +27,13 @@ Today's Lab we dipped into shared preferences and extras. The homepage was updat
 Today's lab was all about setting up a RecyclerView. The buttons on the homepage were instead replaced with a RecyclerViewer that iterates over a list of Tasks and displays them on screen. Each task has an event listener that will pass on extras of the tasks properties which will populate the Task Detail page.
 
 ![Lab28 Home](screenshots/Lab28/Lab28_Home.PNG)
+
+## Lab29
+
+### Summary
+
+In Today's Lab we implemented Rooms which is a SQL database. A StateEnum was created as the state options for the tasks and was set as one of the properties for the Task class. Functionality was added so that when the user presses the add task button the information gets taken and saved into the database.
+
+![Lab29 Home](screenshots/lab29/Lab29_Home.PNG)
+![Lab29 Task Add](screenshots/lab29/Lab29_AddTask.PNG)
+![Lab29 Task Detail](screenshots/lab29/Lab29_TaskDetail.PNG)
