@@ -83,17 +83,6 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView taskList = findViewById(R.id.taskList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         taskList.setLayoutManager(layoutManager);
-
-//        List<Task> tasks = new ArrayList<>();
-
-//        tasks.add(new Task("Task One","Task One","new"));
-//        tasks.add(new Task("Task Two","Task Two","new"));
-//        tasks.add(new Task("Task Three","Task Three","new"));
-//        tasks.add(new Task("Task Four","Task Four","new"));
-//        tasks.add(new Task("Task Five","Task Five","new"));
-//        tasks.add(new Task("Task Six","Task Six","new"));
-//        tasks.add(new Task("Task Seven","Task Seven","new"));
-
         adapter = new TaskListRecViewAdapter(tasks, this);
         taskList.setAdapter(adapter);
     }
